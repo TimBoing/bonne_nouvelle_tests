@@ -1,12 +1,45 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+#logo-container{
+  height: 20vh;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  #main-logo{
+    height: 15vh;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+#links-container{
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+
+  a{
+    color: black;
+    font-size: 12px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: bold;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+
+
+
+
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
