@@ -1,0 +1,23 @@
+class SiteContactsController < ApplicationController
+  skip_before_action :authenticate_user!
+
+
+  def create
+
+    site_contact = SiteContact.new(site_contact_params)
+    if site_contact.save!
+      ContactMailer.new_contact.deliver_now
+      redirect_to contact_path
+    else
+      raise
+    end
+
+  end
+
+  private
+
+  def site_contact_params
+    params.require(:site_contact).permit(:name, :address, :email, :tel, :subject, :message)
+  end
+
+end

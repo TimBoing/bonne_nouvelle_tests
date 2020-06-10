@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get 'publicites', to: 'pages#publicites'
   get 'apropos', to: 'pages#apropos'
   get 'contact', to: 'pages#contact'
+
+  resources :site_contacts, only: [:create]
+
 end

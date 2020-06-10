@@ -1,0 +1,5 @@
+class SiteContact < ApplicationRecord
+
+
+
+end
