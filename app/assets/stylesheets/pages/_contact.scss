@@ -1,0 +1,46 @@
+.contact-main-container{
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  margin: 20px 0;
+  padding: 3em;
+  background-color: #F9F8F7;
+
+  .discutons-container{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+
+    .red-title{
+      color: #f60606;
+      font-size: 3em;
+    }
+  }
+
+  .formular-container{
+    width: 50%;
+
+    #new_site_contact{
+
+      .flex-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .form-group{
+          width: 49%;
+        }
+      }
+
+      .form-control{
+        border: 1px solid black;
+        border-radius: 0;
+      }
+
+    }
+  }
+}
