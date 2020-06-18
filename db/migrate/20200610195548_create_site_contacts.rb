@@ -13,3 +13,4 @@ class CreateSiteContacts < ActiveRecord::Migration[5.2]
     end
   end
 end
+

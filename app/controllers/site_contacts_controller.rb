@@ -6,7 +6,7 @@ class SiteContactsController < ApplicationController
 
     site_contact = SiteContact.new(site_contact_params)
     if site_contact.save!
-      ContactMailer.new_contact.deliver_now
+      ContactMailer.new_contact(site_contact.id).deliver_now
       redirect_to contact_path
     else
       raise
@@ -21,3 +21,4 @@ class SiteContactsController < ApplicationController
   end
 
 end
+
