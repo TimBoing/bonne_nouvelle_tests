@@ -1,0 +1,46 @@
+<%= render 'shared/navbar' %>
+
+
+<div class="fiche-film">
+
+  <div class="main-info">
+    <div class="affiche">
+      <%= cl_image_tag @fiction.photo.key%>
+    </div>
+
+    <div class="description">
+      <div class="description-card">
+        <p class="title"><%= @fiction.title %></p>
+        <p>Synopsis :</p>
+        <p><%= simple_format(@fiction.synopsis) %></p>
+        <br>
+        <p>Réalisation : <%= @fiction.realisator %></p>
+        <br>
+        <p>Durée : <%= @fiction.duration %></p>
+        <br>
+        <p>Année de production : <%= @fiction.year %></p>
+        <br>
+        <p>Casting : <%= @fiction.casting.gsub(/\n/, ', ') %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="other-mentions greyed-back">
+    <p class="title">MENTIONS TECHNIQUES</p>
+    <p><%= simple_format(@fiction.technical_mentions) %></p>
+  </div>
+
+  <div class="other-mentions">
+    <p class="title">GENERIQUE</p>
+    <p><%= simple_format(@fiction.generique) %></p>
+  </div>
+
+  <div class="other-mentions greyed-back">
+    <p class="title">FESTIVALS</p>
+    <p><%= simple_format(@fiction.festivals) %></p>
+  </div>
+
+
+</div>
+
+

@@ -1,0 +1,28 @@
+<div class="container centered-vertically">
+  <h1>Gestion des fictions</h1>
+
+  <%= link_to "Ajouter une nouvelle fiction", new_fiction_path  %>
+
+  <% @fictions.each do |f| %>
+
+    <div class="edit-card">
+      <div class="image-container">
+        <%= cl_image_tag f.photo.key%>
+      </div>
+      <div class="title-container">
+        <%= f.title %>
+      </div>
+      <div class="possible-actions">
+        <%= link_to fiction_path(f) do  %>
+          <i class="far fa-eye"></i>
+        <% end %>
+        <%= link_to edit_fiction_path(f) do  %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to fiction_path(f), method: :delete, data: { confirm: "Je vais détruire cette fiction. Es-tu sûr?" } do%>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

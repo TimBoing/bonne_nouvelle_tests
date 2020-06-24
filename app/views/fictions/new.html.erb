@@ -1,0 +1,19 @@
+<div class="container centered-vertically">
+  <div class="sub-container">
+    <h1>Nouvelle fiction</h1>
+
+    <%= simple_form_for @fiction do |f| %>
+      <%= f.input :title %>
+      <%= f.input :synopsis %>
+      <%= f.input :realisator %>
+      <%= f.input :duration %>
+      <%= f.input :year %>
+      <%= f.input :casting %>
+      <%= f.input :generique %>
+      <%= f.input :technical_mentions %>
+      <%= f.input :festivals %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.edit-card{
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 20px;
+  width: 80%;
+  border-radius: 4px;
+  // display: flex;
+  // height: 150px;
+
+  .image-container{
+    width: 100%;
+    height: 300px;
+    img{
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .title-container{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .possible-actions{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+}

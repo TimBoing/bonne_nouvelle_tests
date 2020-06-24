@@ -1,0 +1,2 @@
+class Docu < ApplicationRecord
+end
