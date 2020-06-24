@@ -24,11 +24,30 @@
         <% end %>
       </div>
     </div>
+
     <% @toggler = false %>
 
   <% else %>
     <div class="year-container">
+      <div class="year"><%= y %></div>
+      <div class="media-cards">
+        <% @fictions.each do |f| %>
+          <% if f.year.to_i == y %>
 
+            <%= link_to fiction_path(f) do %>
+              <div class="media-card">
+                <%= cl_image_tag f.photo.key%>
+                <div class="media-card-description">
+                  <p class="title"><%= f.title %></p>
+                  <p>Réalisation : <%= f.realisator %></p>
+                  <p>Durée : <%= f.duration %></p>
+                </div>
+              </div>
+            <% end %>
+
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <% @toggler = true %>
   <% end %>
