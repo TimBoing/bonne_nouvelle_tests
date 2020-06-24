@@ -35,6 +35,10 @@ class FictionsController < ApplicationController
   end
 
   def destroy
+    @fiction = Fiction.find(params[:id])
+    @fiction.destroy
+    redirect_to fictions_path
+
   end
 
   private
