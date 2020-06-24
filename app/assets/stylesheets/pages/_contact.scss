@@ -1,9 +1,9 @@
 .contact-main-container{
-  height: 50vh;
+  height: 60vh;
   width: 100%;
   display: flex;
-  margin: 20px 0;
-  padding: 3em;
+  align-items: center;
+  padding: 20px 10%;
   background-color: #F9F8F7;
 
   .discutons-container{
@@ -42,5 +42,17 @@
       }
 
     }
+  }
+}
+
+
+
+.map-container{
+  padding: 20px 10%;
+  height: 60vh;
+
+
+  #map{
+    border-radius: 10px;
   }
 }

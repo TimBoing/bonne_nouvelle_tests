@@ -8,6 +8,11 @@
 
   #main-logo{
     height: 15vh;
+    transition: all 1s;
+
+    &:hover{
+      transform: rotate(-45deg);
+    }
   }
 }
 
@@ -23,9 +28,28 @@
     margin: 15px;
     text-decoration: none;
     font-size: bold;
+    position: relative;
+
+    &.active{
+      // color: red;
+
+      #red-div{
+        width: 100%;
+      }
+    }
   }
 }
 
+
+#red-div{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: red;
+  transition: all 1s;
+}
 
 
 

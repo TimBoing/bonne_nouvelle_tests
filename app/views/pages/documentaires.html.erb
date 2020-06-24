@@ -1,4 +1,39 @@
-<%= render 'shared/navbar' %>
+<div id="logo-container">
+  <%= image_tag "logo_white.png", alt: "alttext", id: "main-logo" %>
+</div>
+<div id="links-container">
+
+  <%= link_to root_path, class: "main-button" do %>
+    <p>ACCUEIL</p>
+    <div id="red-div"></div>
+  <% end %>
+
+  <%= link_to nos_fictions_path, class: "main-button" do  %>
+    <p>FICTIONS</p>
+    <div id="red-div"></div>
+  <% end %>
+
+  <%= link_to nos_documentaires_path, class: "main-button active" do  %>
+    <p>DOCUMENTAIRES</p>
+    <div id="red-div"></div>
+  <% end %>
+
+  <%= link_to  nos_publicites_path, class: "main-button" do %>
+    <p>PUBLICITÉS</p>
+    <div id="red-div"></div>
+  <% end %>
+
+  <%= link_to apropos_path, class: "main-button" do %>
+    <p>À PROPOS</p>
+    <div id="red-div"></div>
+  <% end %>
+
+  <%= link_to contact_path, class: "main-button" do %>
+    <p>CONTACT</p>
+    <div id="red-div"></div>
+  <% end %>
+</div>
+
 
 <p>docu</p>
 
