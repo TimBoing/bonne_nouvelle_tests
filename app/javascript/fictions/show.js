@@ -23,6 +23,18 @@ const bordersAnimation = () => {
   });
 
 
+  window.addEventListener('scroll', (event) => {
+    if(window.scrollY >= 0 && window.scrollY <= 810){
+      console.log(window.scrollY);
+      let borderSize = 100 - 0.123 * scrollY;
+      borderTop.style.width = `${borderSize}%`;
+      borderBottom.style.width = `${borderSize}%`;
+
+    }
+
+  });
+
 }
 
 export{bordersAnimation};
+
