@@ -1,13 +1,49 @@
-#carousel-accueil{
-  border: 3px solid black;
+@media (max-width: 992px){
 
-  .carousel-controls:hover{
-    cursor: pointer;
+  .carousel-wrapper{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    width: 100vw;
+  }
+
+  #carousel-accueil{
+    border: 3px solid black;
+    width: 100vw;
+    .carousel-controls:hover{
+      cursor: pointer;
+    }
+  }
+
+  .carousel-inner{
+    .carousel-item{
+      height: 30vh;
+      background-color: black;
+
+      img{
+        width: 100vw;
+      }
+    }
   }
 }
 
-.carousel-item{
-  height: 50vh;
-  img{
+@media (min-width: 992px){
+  #carousel-accueil{
+    border: 3px solid black;
+    .carousel-controls:hover{
+      cursor: pointer;
+    }
+  }
+
+  .carousel-inner{
+    .carousel-item{
+      height: 50vh;
+      background-color: black;
+
+      img{
+        width: 100vw;
+      }
+    }
   }
 }
