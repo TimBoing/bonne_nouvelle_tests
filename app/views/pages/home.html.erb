@@ -1,6 +1,6 @@
-<div id="logo-container">
-  <%= image_tag "logo_white.png", alt: "alttext", id: "main-logo" %>
-</div>
+<%= render 'shared/navbar' %>
+<%= render 'shared/sidenav' %>
+
 <div id="links-container">
 
   <%= link_to root_path, class: "main-button active" do %>
@@ -64,4 +64,4 @@
   </a>
 </div>
 
-    <%= render 'shared/footer' %>
+<%= render 'shared/footer' %>

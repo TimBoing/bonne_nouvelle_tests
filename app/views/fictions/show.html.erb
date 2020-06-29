@@ -1,6 +1,5 @@
-<div id="logo-container">
-  <%= image_tag "logo_white.png", alt: "alttext", id: "main-logo" %>
-</div>
+<%= render 'shared/navbar' %>
+
 <div id="links-container">
 
   <%= link_to root_path, class: "main-button" do %>
@@ -62,10 +61,12 @@
     </div>
   </div>
 
-  <div class="other-mentions greyed-back">
-    <p class="title">MENTIONS TECHNIQUES</p>
-    <p><%= simple_format(@fiction.technical_mentions) %></p>
-  </div>
+  <% if @fiction.festivals %>
+    <div class="other-mentions greyed-back">
+      <p class="title">FESTIVALS</p>
+      <p><%= simple_format(@fiction.festivals) %></p>
+    </div>
+  <% end %>
 
   <div class="other-mentions">
     <p class="title">GENERIQUE</p>
@@ -73,8 +74,8 @@
   </div>
 
   <div class="other-mentions greyed-back">
-    <p class="title">FESTIVALS</p>
-    <p><%= simple_format(@fiction.festivals) %></p>
+    <p class="title">MENTIONS TECHNIQUES</p>
+    <p><%= simple_format(@fiction.technical_mentions) %></p>
   </div>
 
 

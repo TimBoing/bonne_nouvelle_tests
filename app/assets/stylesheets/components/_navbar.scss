@@ -1,69 +1,106 @@
-#logo-container{
-  height: 20vh;
-  // border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// Until tablets
+@media (max-width: 992px){
+  #logo-container{
+    position: relative;
+    height: 10vh;
+    width: 100vw;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
-  #main-logo{
-    height: 15vh;
-    transition: all 1s;
+    #main-logo{
+      height: 8vh;
+      transition: all 1s;
 
-    &:hover{
-      transform: rotate(-360deg);
+      &:hover{
+        transform: rotate(-40deg);
+      }
+    }
+
+    #burger-menu{
+      position: absolute;
+      left: 20px;
     }
   }
+
+  #links-container{
+    display: none;
+
+  }
+
 }
 
-#links-container{
-  height: 8vh;
-  display: flex;
-  justify-content: center;
-  // align-items: center;
 
-  a{
-    color: black;
-    font-size: 15px;
-    margin: 15px;
-    text-decoration: none;
-    font-size: bold;
-    position: relative;
+// Normal css for large screens
+@media (min-width: 992px){
 
-    &.active{
-      // color: red;
+  #logo-container{
+    height: 20vh;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      #red-div{
-        width: 100%;
+
+    #main-logo{
+      height: 15vh;
+      transition: all 1s;
+
+      &:hover{
+        transform: rotate(-360deg);
       }
     }
   }
+
+  #links-container{
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+
+    a{
+      color: black;
+      font-size: 15px;
+      margin: 15px;
+      text-decoration: none;
+      font-size: bold;
+      position: relative;
+
+      &.active{
+        // color: red;
+
+        #red-div{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  #red-div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: red;
+    transition: all 1s;
+  }
+
+  #burger-menu{
+    display: none;
+  }
+
 }
 
 
-#red-div{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background-color: red;
-  transition: all 1s;
-}
+
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
 
 
 
-
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: white;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
 
