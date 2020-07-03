@@ -1,87 +1,177 @@
-.fiche-film{
-  .main-info{
-    display: flex;
-    width: 100vw;
-    background-color: rgb(30, 30, 32);
-    height: 60vh;
+@media (max-width: 992px){
+  .fiche-film{
+    .main-info{
+      width: 100vw;
+      background-color: rgb(30, 30, 32);
 
-    .affiche{
-      position: relative;
-      height: 100%;
-      width: 50vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      .affiche{
+        position: relative;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
 
-      img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+        img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        #border-top-div{
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          background-color: red;
+          width: 0%;
+          height: 4px;
+          // transition: all 1s;
+
+        }
+
       }
+      .description{
+        position: relative;
+        width: 100vw;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 20px;
 
-      #border-top-div{
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        background-color: red;
-        width: 0%;
-        height: 4px;
-        // transition: all 1s;
+        #border-bottom-div{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 2;
+          background-color: red;
+          width: 0%;
+          height: 4px;
+          // transition: all 1s;
+        }
 
-      }
-
-    }
-    .description{
-      position: relative;
-      width: 50vw;
-      color: white;
-      display: flex;
-      align-items: center;
-      padding: 20px;
-
-      #border-bottom-div{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 2;
-        background-color: red;
-        width: 0%;
-        height: 4px;
-        // transition: all 1s;
-      }
-
-      .description-card{
-        // background-color: rgba(250, 250, 250, 0.2);
-        .title{
-          font-size: 2em;
-          color: red;
-          // color: rgb(234, 52, 36);
+        .description-card{
+          // background-color: rgba(250, 250, 250, 0.2);
+          .title{
+            display: none;
+            // color: rgb(234, 52, 36);
+          }
         }
       }
     }
+    .other-mentions{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      // background-color: rgb(150, 150, 150);
+      padding: 20px 10%;
+
+      &.greyed-back{
+        background-color: rgb(246, 246, 246);
+      }
+
+      .title{
+        font-size: 2em;
+      }
+
+      p{
+        text-align: center;
+      }
+    }
+
   }
-  .other-mentions{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    // background-color: rgb(150, 150, 150);
-    padding: 20px 10%;
+}
 
-    &.greyed-back{
-      background-color: rgb(246, 246, 246);
+
+
+@media (min-width: 992px){
+  .fiche-film{
+    .main-info{
+      display: flex;
+      width: 100vw;
+      background-color: rgb(30, 30, 32);
+      height: 60vh;
+
+      .affiche{
+        position: relative;
+        height: 100%;
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        #border-top-div{
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          background-color: red;
+          width: 0%;
+          height: 4px;
+          // transition: all 1s;
+
+        }
+
+      }
+      .description{
+        position: relative;
+        width: 50vw;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+
+        #border-bottom-div{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 2;
+          background-color: red;
+          width: 0%;
+          height: 4px;
+          // transition: all 1s;
+        }
+
+        .description-card{
+          // background-color: rgba(250, 250, 250, 0.2);
+          .title{
+            font-size: 2em;
+            color: red;
+            // color: rgb(234, 52, 36);
+          }
+        }
+      }
+    }
+    .other-mentions{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      // background-color: rgb(150, 150, 150);
+      padding: 20px 10%;
+
+      &.greyed-back{
+        background-color: rgb(246, 246, 246);
+      }
+
+      .title{
+        font-size: 2em;
+      }
+
+      p{
+        text-align: center;
+      }
     }
 
-    .title{
-      font-size: 2em;
-    }
-
-    p{
-      text-align: center;
-    }
   }
-
 }

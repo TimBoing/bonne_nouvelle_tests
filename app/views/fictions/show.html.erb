@@ -1,4 +1,5 @@
 <%= render 'shared/navbar' %>
+<%= render 'shared/sidenav' %>
 
 <div id="links-container">
 
@@ -33,7 +34,9 @@
   <% end %>
 </div>
 
-
+<div class="mobile-title">
+  <p><%= @fiction.title %></p>
+</div>
 
 <div class="fiche-film">
 
