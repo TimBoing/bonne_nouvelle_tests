@@ -7,7 +7,11 @@
 
     <div class="edit-card">
       <div class="image-container">
-        <%= cl_image_tag f.photo.key%>
+        <% if f.photo.attached? %>
+          <%= cl_image_tag f.photo.key%>
+        <% else %>
+          <%= image_tag "logo_white.png" %>
+        <% end %>
       </div>
       <div class="title-container">
         <%= f.title %>
