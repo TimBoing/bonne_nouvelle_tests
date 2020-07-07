@@ -43,7 +43,11 @@
   <div class="main-info">
     <div class="affiche">
       <div id="border-top-div"></div>
-      <%= cl_image_tag @fiction.photo.key%>
+      <% if @fiction.photo.attached? %>
+        <%= cl_image_tag @fiction.photo.key%>
+      <% else %>
+        <%= image_tag "logo_white.png" %>
+      <% end %>
     </div>
 
     <div class="description">
