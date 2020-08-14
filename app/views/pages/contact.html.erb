@@ -38,44 +38,56 @@
   <p>CONTACT</p>
 </div>
 
-<div class="contact-main-container">
+<div class="contact-info-container">
 
-  <div class="discutons-container">
     <p class="red-title">DISCUTONS</p>
-    <p>
-      1 rue du Château 75001 Paris, France
-      <br><br>
-      victorthevenot@bonnenouvellefilms.fr
-      <br><br>
-      01 45 37 07 59
-    </p>
-  </div>
 
-  <div class="formular-container">
-    <%= simple_form_for @site_contact do |f| %>
-      <%= f.input :name, label: false, placeholder: "Nom" %>
-      <%= f.input :address, label: false, placeholder: "Adresse" %>
-      <div class="flex-container">
-        <%= f.input :email, label: false, placeholder: "Email" %>
-        <%= f.input :tel, label: false, placeholder: "Téléphone" %>
-      </div>
-      <%= f.input :subject, label: false, placeholder: "Objet" %>
-      <%= f.input :message, label: false, placeholder: "Message" %>
-      <%= f.button :submit, "Envoyer" %>
-    <% end %>
-  </div>
+    <table>
+      <tr>
+        <td class="t-icon"><i class="fas fa-map-marker-alt"></i></td>
+        <td><p>1 rue du Château 75001 Paris, France</p></td>
+      </tr>
+      <tr>
+        <td class="t-icon"><i class="far fa-envelope"></i></td>
+        <td><p>victorthevenot@bonnenouvellefilms.fr</p></td>
+      </tr>
+
+      <tr>
+        <td class="t-icon"><i class="fas fa-mobile-alt"></i></td>
+        <td><p>01 45 37 07 59</p></td>
+      </tr>
+    </table>
 
 </div>
 
-<div class="map-container" id="map-container">
-   <div
-    id="map"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-image-url="<%= asset_url("logo_white.png") %>"
-  >
+
+<div class="formular-and-map-container">
+   <div class="formular-container">
+      <%= simple_form_for @site_contact do |f| %>
+        <%= f.input :name, label: false, placeholder: "Nom" %>
+        <%= f.input :address, label: false, placeholder: "Adresse" %>
+        <div class="flex-container">
+          <%= f.input :email, label: false, placeholder: "Email" %>
+          <%= f.input :tel, label: false, placeholder: "Téléphone" %>
+        </div>
+        <%= f.input :subject, label: false, placeholder: "Objet" %>
+        <%= f.input :message, as: :text, label: false, placeholder: "Message" %>
+        <%= f.button :submit, "ENVOYER" %>
+      <% end %>
+    </div>
+
+
+  <div class="map-container" id="map-container">
+     <div
+      id="map"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-image-url="<%= asset_url("logo_white.png") %>"
+    >
+    </div>
   </div>
 </div>
-
 
 <%= render 'shared/footer' %>
+
+
 
