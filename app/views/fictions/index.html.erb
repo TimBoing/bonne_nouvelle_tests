@@ -1,32 +1,41 @@
-<div class="container centered-vertically">
+<div class="timtools-container centered-vertically">
   <h1>Gestion des fictions</h1>
 
-  <%= link_to "Ajouter une nouvelle fiction", new_fiction_path  %>
+   <div class="timtools-cards">
 
-  <% @fictions.each do |f| %>
+    <%= link_to new_fiction_path do %>
+      <div class="timtools-card"><p>AJOUTER UNE NOUVELLE FICTION</p></div>
+    <% end %>
 
-    <div class="edit-card">
-      <div class="image-container">
-        <% if f.photo.attached? %>
-          <%= cl_image_tag f.photo.key%>
-        <% else %>
-          <%= image_tag "logo_white.png" %>
-        <% end %>
-      </div>
-      <div class="title-container">
-        <%= f.title %>
-      </div>
-      <div class="possible-actions">
-        <%= link_to fiction_path(f) do  %>
-          <i class="far fa-eye"></i>
-        <% end %>
-        <%= link_to edit_fiction_path(f) do  %>
-          <i class="far fa-edit"></i>
-        <% end %>
-        <%= link_to fiction_path(f), method: :delete, data: { confirm: "Je vais détruire cette fiction. Es-tu sûr?" } do%>
-          <i class="far fa-trash-alt"></i>
-        <% end %>
-      </div>
     </div>
-  <% end %>
+
+    <% @fictions.each do |f| %>
+
+      <div class="edit-card">
+        <div class="image-container">
+          <% if f.photo.attached? %>
+            <%= cl_image_tag f.photo.key%>
+          <% else %>
+            <%= image_tag "logo_white.png" %>
+          <% end %>
+        </div>
+        <div class="title-container">
+          <%= f.title %>
+        </div>
+        <div class="possible-actions">
+          <%= link_to fiction_path(f) do  %>
+            <i class="far fa-eye"></i>
+          <% end %>
+          <%= link_to edit_fiction_path(f) do  %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to fiction_path(f), method: :delete, data: { confirm: "Je vais détruire cette fiction. Es-tu sûr?" } do%>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
 </div>
+
+
