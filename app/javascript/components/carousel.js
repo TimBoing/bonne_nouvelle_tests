@@ -24,3 +24,4 @@ const initCarousel = () => {
 }
 
 export{initCarousel};
+

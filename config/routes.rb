@@ -11,5 +11,8 @@ Rails.application.routes.draw do
 
   resources :site_contacts, only: [:create]
   resources :fictions
+  resources :docus
+  resources :pubs
+  resources :articles
 
 end

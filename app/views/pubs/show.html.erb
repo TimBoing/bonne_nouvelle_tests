@@ -8,7 +8,7 @@
     <div id="red-div"></div>
   <% end %>
 
-  <%= link_to nos_fictions_path, class: "main-button active" do  %>
+  <%= link_to nos_fictions_path, class: "main-button" do  %>
     <p>FICTIONS</p>
     <div id="red-div"></div>
   <% end %>
@@ -18,7 +18,7 @@
     <div id="red-div"></div>
   <% end %>
 
-  <%= link_to  nos_publicites_path, class: "main-button" do %>
+  <%= link_to  nos_publicites_path, class: "main-button active" do %>
     <p>PUBLICITÉS</p>
     <div id="red-div"></div>
   <% end %>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="mobile-title">
-  <p><%= @fiction.title %></p>
+  <p><%= @pub.title %></p>
 </div>
 
 <div class="fiche-film">
@@ -43,8 +43,8 @@
   <div class="main-info">
     <div class="affiche">
       <div id="border-top-div"></div>
-      <% if @fiction.photo.attached? %>
-        <%= cl_image_tag @fiction.photo.key%>
+      <% if @pub.photo.attached? %>
+        <%= cl_image_tag @pub.photo.key%>
       <% else %>
         <%= image_tag "logo_white.png" %>
       <% end %>
@@ -52,41 +52,42 @@
 
     <div class="description">
       <div class="description-card">
-        <p class="title"><%= @fiction.title %></p>
+        <p class="title"><%= @pub.title %></p>
         <p>Synopsis :</p>
-        <p><%= simple_format(@fiction.synopsis) %></p>
+        <p><%= simple_format(@pub.synopsis) %></p>
         <br>
-        <p>Réalisation : <%= @fiction.realisator %></p>
+        <p>Réalisation : <%= @pub.realisator %></p>
         <br>
-        <p>Durée : <%= @fiction.duration %></p>
+        <p>Durée : <%= @pub.duration %></p>
         <br>
-        <p>Année de production : <%= @fiction.year %></p>
+        <p>Année de production : <%= @pub.year %></p>
         <br>
-        <p>Casting : <%= @fiction.casting.gsub(/\n/, ', ') %></p>
+        <p>Casting : <%= @pub.casting.gsub(/\n/, ', ') %></p>
       </div>
       <div id="border-bottom-div"></div>
     </div>
   </div>
 
-  <% unless @fiction.festivals.blank? %>
+  <% unless @pub.festivals.blank? %>
     <div class="other-mentions greyed-back">
       <p class="title">FESTIVALS</p>
-      <p><%= simple_format(@fiction.festivals) %></p>
+      <p><%= simple_format(@pub.festivals) %></p>
     </div>
   <% end %>
 
   <div class="other-mentions">
     <p class="title">GENERIQUE</p>
-    <p><%= simple_format(@fiction.generique) %></p>
+    <p><%= simple_format(@pub.generique) %></p>
   </div>
 
   <div class="other-mentions greyed-back">
     <p class="title">MENTIONS TECHNIQUES</p>
-    <p><%= simple_format(@fiction.technical_mentions) %></p>
+    <p><%= simple_format(@pub.technical_mentions) %></p>
   </div>
 
 
 </div>
+
 
 
 

@@ -35,8 +35,72 @@
 </div>
 
 <div class="mobile-title">
-  <p>PUBLICITÉS</p>
+  <p>PUBLICITES</p>
 </div>
 
-<p>pubs</p>
+
+<% @years.each do |y|%>
+
+  <% if @toggler == true %>
+    <div class="year-container greyed-back">
+      <div class="year"><%= y %></div>
+      <div class="media-cards">
+        <% @pubs.each do |f| %>
+          <% if f.year.to_i == y %>
+            <%= link_to pub_path(f) do %>
+              <div class="media-card">
+                <% if f.photo.attached? %>
+                  <%= cl_image_tag f.photo.key%>
+                <% else %>
+                  <%= image_tag "logo_white.png" %>
+                <% end %>
+                <div class="media-card-description">
+                  <p class="title"><%= f.title %></p>
+                  <p>Réalisation : <%= f.realisator %></p>
+                  <p>Durée : <%= f.duration %></p>
+                </div>
+              </div>
+            <% end %>
+
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <% @toggler = false %>
+
+  <% else %>
+    <div class="year-container">
+      <div class="year"><%= y %></div>
+      <div class="media-cards">
+        <% @pubs.each do |f| %>
+          <% if f.year.to_i == y %>
+
+            <%= link_to pub_path(f) do %>
+              <div class="media-card">
+                <% if f.photo.attached? %>
+                  <%= cl_image_tag f.photo.key%>
+                <% else %>
+                  <%= image_tag "logo_white.png" %>
+                <% end %>
+                <div class="media-card-description">
+                  <p class="title"><%= f.title %></p>
+                  <p>Réalisation : <%= f.realisator %></p>
+                  <p>Durée : <%= f.duration %></p>
+                </div>
+              </div>
+            <% end %>
+
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <% @toggler = true %>
+  <% end %>
+
+
+<% end %>
+
 <%= render 'shared/footer' %>
+
+

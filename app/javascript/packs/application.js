@@ -4,9 +4,11 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { bordersAnimation } from '../fictions/show';
 import { animateBordersMainButtons } from '../components/main-buttons';
 import { initSidenav } from '../components/sidenav';
+import { newArticle } from '../components/newArticle';
 
 animateBordersMainButtons();
 initMapbox();
 initCarousel();
 bordersAnimation();
 initSidenav();
+newArticle();

@@ -37,11 +37,24 @@ ActiveRecord::Schema.define(version: 2020_06_24_132234) do
   end
 
   create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "contenu"
+    t.string "order"
+    t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "docus", force: :cascade do |t|
+    t.string "title"
+    t.text "synopsis"
+    t.string "realisator"
+    t.string "duration"
+    t.string "year"
+    t.text "casting"
+    t.text "generique"
+    t.text "technical_mentions"
+    t.text "festivals"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,6 +74,15 @@ ActiveRecord::Schema.define(version: 2020_06_24_132234) do
   end
 
   create_table "pubs", force: :cascade do |t|
+    t.string "title"
+    t.text "synopsis"
+    t.string "realisator"
+    t.string "duration"
+    t.string "year"
+    t.text "casting"
+    t.text "generique"
+    t.text "technical_mentions"
+    t.text "festivals"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
