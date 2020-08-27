@@ -53,7 +53,7 @@
     <div class="description">
       <div class="description-card">
         <p class="title"><%= @article.title %></p>
-        <p><%= @article.contenu.gsub(/\n/, ', ') %></p>
+        <p><%= @article.contenu.gsub(/\n/, '<br><br>').html_safe %></p>
       </div>
       <div id="border-bottom-div"></div>
     </div>
