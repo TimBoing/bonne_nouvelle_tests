@@ -38,54 +38,29 @@
   <p><%= @article.title %></p>
 </div>
 
-<!-- <div class="fiche-film">
+<div class="fiche-film">
 
   <div class="main-info">
     <div class="affiche">
       <div id="border-top-div"></div>
-      <%# if @docu.photo.attached? %>
-        <%#= cl_image_tag @docu.photo.key%>
-      <%# else %>
-        <%#= image_tag "logo_white.png" %>
-      <%# end %>
+      <% if @article.photo.attached? %>
+        <%= cl_image_tag @article.photo.key%>
+      <% else %>
+        <%= image_tag "logo_white.png" %>
+      <% end %>
     </div>
 
     <div class="description">
       <div class="description-card">
-        <p class="title"><%#= @docu.title %></p>
-        <p>Synopsis :</p>
-        <p><%#= simple_format(@docu.synopsis) %></p>
-        <br>
-        <p>Réalisation : <%#= @docu.realisator %></p>
-        <br>
-        <p>Durée : <%#= @docu.duration %></p>
-        <br>
-        <p>Année de production : <%#= @docu.year %></p>
-        <br>
-        <p>Casting : <%#= @docu.casting.gsub(/\n/, ', ') %></p>
+        <p class="title"><%= @article.title %></p>
+        <p><%= @article.contenu.gsub(/\n/, ', ') %></p>
       </div>
       <div id="border-bottom-div"></div>
     </div>
   </div>
 
-  <%# unless @docu.festivals.blank? %>
-    <div class="other-mentions greyed-back">
-      <p class="title">FESTIVALS</p>
-      <p><%#= simple_format(@docu.festivals) %></p>
-    </div>
-  <%# end %>
-
-  <div class="other-mentions">
-    <p class="title">GENERIQUE</p>
-    <p><%#= simple_format(@docu.generique) %></p>
-  </div>
-
-  <div class="other-mentions greyed-back">
-    <p class="title">MENTIONS TECHNIQUES</p>
-    <p><%#= simple_format(@docu.technical_mentions) %></p>
-  </div> -->
-
 </div>
+
 
 
 
