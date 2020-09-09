@@ -1,0 +1,25 @@
+<div class="timtools-container centered-vertically">
+  <h1>Editer Article</h1>
+  <div class="timtools-cards">
+
+    <%= simple_form_for @article do |f| %>
+      <%= f.input :photo, as: :file %>
+      <%= f.label :link, "Lien" %>
+      <%= f.input :link, label: false %>
+      <%= f.label :title, "Titre de l´Article" %>
+      <%= f.input :title, label: false %>
+      <%= f.input :contenu %>
+
+      <div id="information-for-articles">
+        <p>Si vous choisissez de mettre un lien vous même (vers une fiction, un docu, une page site externe...) alors vous ne pouvez pas ajouter de Titre ou de contenu pour l´article.</p>
+        <p>Si vous laissez le champ "Lien" vide, alors le lien se fera automatiquement vers une nouvelle page avec le contenu et titre de votre article.</p>
+      </div>
+
+      <div class="center-container">
+        <%= f.button :submit %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+.

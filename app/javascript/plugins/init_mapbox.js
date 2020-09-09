@@ -14,7 +14,7 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',
-      center: [2.318587, 48.838090 ],
+      center: [2.351950, 48.893483 ],
       zoom: 10
     });
 
@@ -23,13 +23,13 @@ const initMapbox = () => {
     element.className = 'marker';
     element.style.backgroundImage = `url('${mapElement.dataset.imageUrl}')`;
 
-    const longit = 2.318587;
-    const latit = 48.838090;
+    const longit = 2.351950;
+    const latit = 48.893483;
     let theMark = new mapboxgl.Marker(element);
     theMark.setLngLat([longit, latit]);
     theMark.addTo(map);
 
-    let markers = [{"lng": 2.318587, "lat": 48.838090 }];
+    let markers = [{"lng": 2.351950, "lat": 48.893483 }];
     // fitMapToMarkers(map, markers);
 
 

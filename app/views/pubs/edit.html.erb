@@ -1,6 +1,6 @@
-<div class="container centered-vertically">
-  <div class="sub-container">
-    <h1>Editer Pub</h1>
+<div class="timtools-container centered-vertically">
+  <h1>Editer Pub</h1>
+  <div class="timtools-cards">
 
     <%= simple_form_for @pub do |f| %>
       <%= f.input :title %>
@@ -13,7 +13,9 @@
       <%= f.input :technical_mentions %>
       <%= f.input :festivals %>
       <%= f.input :photo, as: :file %>
-      <%= f.button :submit %>
+      <div class="center-container">
+        <%= f.button :submit %>
+      </div>
     <% end %>
   </div>
 </div>
