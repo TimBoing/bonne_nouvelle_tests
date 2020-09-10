@@ -29,21 +29,45 @@
 }
 
 @media (min-width: 992px){
-  #carousel-accueil{
-    border: 3px solid black;
-    .carousel-controls:hover{
-      cursor: pointer;
-    }
-  }
 
-  .carousel-inner{
-    .carousel-item{
-      height: 50vh;
-      background-color: black;
+  .carousel-wrapper{
 
-      img{
-        width: 100vw;
+    #carousel-accueil{
+      border: 3px solid black;
+
+      .carousel-inner{
+
+        .carousel-item{
+          height: 50vh;
+          background-color: black;
+
+          .carousel-centered{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+
+            a{
+              height: 50vh;
+            }
+          }
+
+          img{
+            height: 100%;
+          }
+        }
+      }
+
+      .carousel-controls:hover{
+        cursor: pointer;
       }
     }
+
   }
+
+
+
+
+
+
 }

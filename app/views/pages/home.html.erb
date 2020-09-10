@@ -34,6 +34,7 @@
   <% end %>
 </div>
 
+
 <div class="carousel-wrapper">
 
   <div id="carousel-accueil" class="carousel slide" data-ride="carousel">
@@ -52,32 +53,45 @@
       <% @articles.each_with_index do |a, i|%>
 
         <% if i == 0 %>
+
           <div class="carousel-item active">
+            <div class="carousel-centered">
+
             <% if a.link.blank? %>
               <a href="<%= article_path(a)%>">
             <% else %>
               <a href="<%= a.link %>">
             <% end %>
-              <% if a.photo.attached? %>
-                <img class="d-block" src="<%= cloudinary_url a.photo.key %>">
-              <% else %>
-                <img class="d-block" src="<%= asset_path 'logo_white.png' %>">
-              <% end %>
+
+            <% if a.photo.attached? %>
+              <img class="d-block" src="<%= cloudinary_url a.photo.key %>">
+            <% else %>
+              <img class="d-block" src="<%= asset_path 'logo_white.png' %>">
+            <% end %>
             </a>
+
+            </div>
           </div>
+
         <% else %>
+
          <div class="carousel-item">
+          <div class="carousel-centered">
+
            <% if a.link.blank? %>
              <a href="<%= article_path(a)%>">
            <% else %>
              <a href="<%= a.link %>">
            <% end %>
-             <% if a.photo.attached? %>
-               <img class="d-block" src="<%= cloudinary_url a.photo.key %>">
-             <% else %>
-               <img class="d-block" src="<%= asset_path 'logo_white.png' %>">
-             <% end %>
+
+           <% if a.photo.attached? %>
+             <img class="d-block" src="<%= cloudinary_url a.photo.key %>">
+           <% else %>
+             <img class="d-block" src="<%= asset_path 'logo_white.png' %>">
+           <% end %>
            </a>
+
+          </div>
          </div>
         <% end %>
 
@@ -98,4 +112,5 @@
 </div>
 
 <%= render 'shared/footer' %>
+
 
