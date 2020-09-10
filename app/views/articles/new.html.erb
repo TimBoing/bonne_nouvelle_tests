@@ -1,5 +1,10 @@
 <div class="timtools-container centered-vertically">
-  <h1>Nouvel Article</h1>
+  <div class="timtools-title">
+    <%= link_to timtools_path do  %>
+      <i class="fas fa-igloo"></i>
+    <% end %>
+    <h1>Nouvel Article</h1>
+  </div>
   <div class="timtools-cards">
 
     <%= simple_form_for @article do |f| %>
