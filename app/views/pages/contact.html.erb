@@ -62,24 +62,47 @@
         <td></td>
       </tr> -->
     </table>
+    <div class="perso-contacts">
+
+      <div class="perso-contact">
+        <p><strong>Victor Thevenot</strong></p>
+
+          <%#= link_to "mailto:victorthevenot@bonnenouvellefilms.fr" do %>
+            <!-- <td class="t-icon"><i class="far fa-envelope"></i></td> -->
+          <%# end %>
+        <p>Producteur</p>
+        <p>victorthevenot@bonnenouvellefilms.fr</p>
+      </div>
+
+      <div class="perso-contact">
+        <p><strong>Maxence Brenot</strong></p>
+          <%#= link_to "mailto:maxencebrenot@bonnenouvellefilms.fr" do %>
+            <!-- <td class="t-icon"><i class="far fa-envelope"></i></td> -->
+          <%# end %>
+
+        <p>Producteur</p>
+        <p>maxencebrenot@bonnenouvellefilms.fr</p>
+      </div>
+
+    </div>
 
 </div>
 
 
-<div class="formular-and-map-container">
-   <div class="formular-container">
-      <%= simple_form_for @site_contact do |f| %>
-        <%= f.input :name, label: false, placeholder: "Nom" %>
-        <%= f.input :address, label: false, placeholder: "Adresse" %>
-        <div class="flex-container">
-          <%= f.input :email, label: false, placeholder: "Email" %>
-          <%= f.input :tel, label: false, placeholder: "Téléphone" %>
-        </div>
-        <%= f.input :subject, label: false, placeholder: "Objet" %>
-        <%= f.input :message, as: :text, label: false, placeholder: "Message" %>
-        <%= f.button :submit, "ENVOYER" %>
-      <% end %>
-    </div>
+<div class="formular-and-map-container centered-vertically">
+   <!-- <div class="formular-container"> -->
+      <%#= simple_form_for @site_contact do |f| %>
+        <%#= f.input :name, label: false, placeholder: "Nom" %>
+        <%#= f.input :address, label: false, placeholder: "Adresse" %>
+        <!-- <div class="flex-container"> -->
+          <%#= f.input :email, label: false, placeholder: "Email" %>
+          <%#= f.input :tel, label: false, placeholder: "Téléphone" %>
+        <!-- </div> -->
+        <%#= f.input :subject, label: false, placeholder: "Objet" %>
+        <%#= f.input :message, as: :text, label: false, placeholder: "Message" %>
+        <%#= f.button :submit, "ENVOYER" %>
+      <%# end %>
+    <!-- </div> -->
 
 
   <div class="map-container" id="map-container">
@@ -90,6 +113,7 @@
     >
     </div>
   </div>
+
 </div>
 
 <%= render 'shared/footer' %>
