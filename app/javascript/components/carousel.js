@@ -21,6 +21,19 @@ const initCarousel = () => {
     })
   })
 
+
+  window.addEventListener('keydown', (event) => {
+    switch(event.keyCode) {
+      case 37:
+        $('#carousel-accueil').carousel("prev");
+        break;
+      case 39:
+        $('#carousel-accueil').carousel("next");
+        break;
+      default:
+    }
+  });
+
 }
 
 export{initCarousel};
