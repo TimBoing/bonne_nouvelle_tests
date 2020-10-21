@@ -45,17 +45,17 @@
       .carousel-inner{
 
         .carousel-item{
-          height: 50vh;
+          height: 60vh;
           background-color: black;
 
           .carousel-centered{
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50vh;
+            height: 60vh;
 
             a{
-              height: 50vh;
+              height: 60vh;
             }
           }
 
@@ -71,10 +71,5 @@
     }
 
   }
-
-
-
-
-
-
 }
+
