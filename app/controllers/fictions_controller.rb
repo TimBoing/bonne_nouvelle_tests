@@ -2,7 +2,12 @@ class FictionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
   def index
+    # Dans Timtools
     @fictions = Fiction.all
+    @years = @fictions.map{|f| f.year.to_i}
+    @years = @years.uniq
+    @years.sort!{ |a,b| b <=> a }
+    @toggler = true
   end
 
   def new
@@ -49,3 +54,4 @@ class FictionsController < ApplicationController
 
 
 end
+
