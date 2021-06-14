@@ -79,6 +79,11 @@
                     <% end %>
                   </div>
 
+                  <div class="triage" data-type="fictions" data-id="<%= f.id %>" data-ind="<%= f.ind %>">
+                    <i class="fas fa-chevron-left promote"></i>
+                    <i class="fas fa-chevron-right demote"></i>
+                  </div>
+
 
                 </div>
               </div>
@@ -120,6 +125,12 @@
                       <i class="far fa-trash-alt"></i>
                     <% end %>
                   </div>
+
+                  <div class="triage" data-type="fictions" data-id="<%= f.id %>" data-ind="<%= f.ind %>">
+                    <i class="fas fa-chevron-left promote"></i>
+                    <i class="fas fa-chevron-right demote"></i>
+                  </div>
+
                 </div>
               </div>
             <% end %>

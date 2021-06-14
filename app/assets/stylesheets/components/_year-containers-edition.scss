@@ -138,6 +138,20 @@
 
           }
 
+          .triage{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            min-height: 100px;
+
+            i{
+              &:hover{
+                cursor: pointer;
+              }
+            }
+          }
+
         }
 
 

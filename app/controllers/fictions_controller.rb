@@ -3,11 +3,12 @@ class FictionsController < ApplicationController
 
   def index
     # Dans Timtools
-    @fictions = Fiction.all
+    @fictions = Fiction.all.sort_by{|f| f.ind}
     @years = @fictions.map{|f| f.year.to_i}
     @years = @years.uniq
     @years.sort!{ |a,b| b <=> a }
     @toggler = true
+
   end
 
   def new
