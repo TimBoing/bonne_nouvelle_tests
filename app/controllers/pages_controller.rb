@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def fiction
-    @fictions = Fiction.all
+    @fictions = Fiction.all.sort_by{|f| f.ind}
     @years = @fictions.map{|f| f.year.to_i}
     @years = @years.uniq
     @years.sort!{ |a,b| b <=> a }
@@ -44,21 +44,20 @@ class PagesController < ApplicationController
 
 
   def promotion
-
-    puts "----------------------------------------------------------------------------------------------------"
-    puts "----------------------------------------------------------------------------------------------------"
-    puts params
-
     if params[:type] == "fictions"
+      elements = Fiction.all.sort_by{|f| f.ind}
       element = Fiction.find(params[:id])
-      element_ind = element.ind
-      previous_element = Fiction.find_by(ind: element_ind - 1)
-
-      unless previous_element == nil
-        element.update(ind: previous_element.ind)
-        previous_element.update(ind: element_ind)
-      end
     end
+
+    element_ind = element.ind
+    previous_elements = elements.select{|e| e.ind < element_ind && e.year == element.year}
+    previous_element = previous_elements.blank? ? nil : previous_elements.last
+
+    unless previous_element == nil
+      element.update(ind: previous_element.ind)
+      previous_element.update(ind: element_ind)
+    end
+
 
     returned_hash = {ok: "ok"}
     render json: returned_hash.to_json
@@ -66,6 +65,24 @@ class PagesController < ApplicationController
   end
 
   def demotion
+
+    if params[:type] == "fictions"
+      elements = Fiction.all.sort_by{|f| f.ind}
+      element = Fiction.find(params[:id])
+    end
+
+    element_ind = element.ind
+    next_elements = elements.select{|e| e.ind > element_ind && e.year == element.year}
+    next_element = next_elements.blank? ? nil : next_elements.first
+
+    unless next_element == nil
+      element.update(ind: next_element.ind)
+      next_element.update(ind: element_ind)
+    end
+
+
+    returned_hash = {ok: "ok"}
+    render json: returned_hash.to_json
   end
 
 end
