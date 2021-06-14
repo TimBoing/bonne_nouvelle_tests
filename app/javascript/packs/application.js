@@ -6,6 +6,7 @@ import { animateBordersMainButtons } from '../components/main-buttons';
 import { initSidenav } from '../components/sidenav';
 import { newArticle } from '../components/newArticle';
 import { animateLogo } from '../components/logo';
+import { triage } from '../components/triage';
 
 animateBordersMainButtons();
 initMapbox();
@@ -14,3 +15,4 @@ bordersAnimation();
 initSidenav();
 newArticle();
 animateLogo();
+triage();

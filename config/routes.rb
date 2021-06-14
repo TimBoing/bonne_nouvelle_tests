@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'timtools', to: 'pages#timtools'
 
+  post 'promotion', to: 'pages#promotion'
+  post 'demotion', to: 'pages#demotion'
+
   resources :site_contacts, only: [:create]
   resources :fictions
   resources :docus
