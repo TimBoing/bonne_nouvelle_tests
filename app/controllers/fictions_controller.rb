@@ -18,7 +18,9 @@ class FictionsController < ApplicationController
   def create
 
     fiction = Fiction.new(fictions_params)
+
     if fiction.save!
+      fiction.update(ind: fiction.id)
       redirect_to fictions_path
     else
       render :new

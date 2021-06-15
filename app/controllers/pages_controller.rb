@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   def documentaires
-    @docus = Docu.all
+    @docus = Docu.all.sort_by{|f| f.ind}
     @years = @docus.map{|f| f.year.to_i}
     @years = @years.uniq
     @years.sort!{ |a,b| b <=> a }
@@ -47,6 +47,9 @@ class PagesController < ApplicationController
     if params[:type] == "fictions"
       elements = Fiction.all.sort_by{|f| f.ind}
       element = Fiction.find(params[:id])
+    elsif params[:type] == "docus"
+      elements = Docu.all.sort_by{|f| f.ind}
+      element = Docu.find(params[:id])
     end
 
     element_ind = element.ind
@@ -69,6 +72,10 @@ class PagesController < ApplicationController
     if params[:type] == "fictions"
       elements = Fiction.all.sort_by{|f| f.ind}
       element = Fiction.find(params[:id])
+    elsif params[:type] == "docus"
+      elements = Docu.all.sort_by{|f| f.ind}
+      element = Docu.find(params[:id])
+
     end
 
     element_ind = element.ind
