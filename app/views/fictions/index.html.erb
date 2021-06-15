@@ -14,133 +14,104 @@
 
     </div>
 
-<!-- --------------------------------PREVIOUS CODE---------------------------------->
-
-<!--  <%# @fictions.each do |f| %>
-      <div class="edit-card">
-        <div class="image-container">
-          <%# if f.photo.attached? %>
-            <%#= cl_image_tag f.photo.key%>
-          <%# else %>
-            <%#= image_tag "logo_white.png" %>
-          <%# end %>
-        </div>
-        <div class="title-container">
-          <%#= f.title %>
-        </div>
-        <div class="possible-actions">
-          <%#= link_to fiction_path(f) do  %>
-            <i class="far fa-eye"></i>
-          <%# end %>
-          <%#= link_to edit_fiction_path(f) do  %>
-            <i class="far fa-edit"></i>
-          <%# end %>
-          <%#= link_to fiction_path(f), method: :delete, data: { confirm: "Je vais détruire cette fiction. Es-tu sûr?" } do%>
-            <i class="far fa-trash-alt"></i>
-          <%# end %>
-        </div>
-      </div>
-    <%# end %> -->
-
-<!-- ------------------------------------------------------------------------------->
 </div>
 
-  <% @years.each do |y|%>
+<% @years.each do |y|%>
 
-    <% if @toggler == true %>
-      <div class="year-container-edition greyed-back">
+  <% if @toggler == true %>
+    <div class="year-container-edition greyed-back">
 
-        <div class="year"><%= y %></div>
+      <div class="year"><%= y %></div>
 
-        <div class="media-cards">
+      <div class="media-cards">
 
-          <% @fictions.each do |f| %>
+        <% @fictions.each do |f| %>
 
-            <% if f.year.to_i == y %>
+          <% if f.year.to_i == y %>
 
-              <div class="media-card">
+            <div class="media-card">
 
-                <% if f.photo.attached? %>
-                  <%= cl_image_tag f.photo.key%>
-                <% else %>
-                  <%= image_tag "logo_white.png" %>
-                <% end %>
+              <% if f.photo.attached? %>
+                <%= cl_image_tag f.photo.key%>
+              <% else %>
+                <%= image_tag "logo_white.png" %>
+              <% end %>
 
-                <div class="media-card-description">
-                  <p class="title"><%= f.title %></p>
+              <div class="media-card-description">
+                <p class="title"><%= f.title %></p>
 
-                  <div class="action-links">
-                    <%= link_to edit_fiction_path(f) do  %>
-                      <i class="far fa-edit"></i>
-                    <% end %>
+                <div class="action-links">
+                  <%= link_to edit_fiction_path(f) do  %>
+                    <i class="far fa-edit"></i>
+                  <% end %>
 
-                    <%= link_to fiction_path(f), method: :delete, data: { confirm: "Je vais détruire cette fiction. Es-tu sûr?" } do%>
-                      <i class="far fa-trash-alt"></i>
-                    <% end %>
-                  </div>
-
-                  <div class="triage" data-type="fictions" data-id="<%= f.id %>" data-ind="<%= f.ind %>">
-                    <i class="fas fa-chevron-left promote"></i>
-                    <i class="fas fa-chevron-right demote"></i>
-                  </div>
-
-
+                  <%= link_to fiction_path(f), method: :delete, data: { confirm: "Je vais détruire cette fiction. Es-tu sûr?" } do%>
+                    <i class="far fa-trash-alt"></i>
+                  <% end %>
                 </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
 
-      <% @toggler = false %>
-
-    <% else %>
-
-      <div class="year-container-edition">
-
-        <div class="year"><%= y %></div>
-
-        <div class="media-cards">
-
-          <% @fictions.each do |f| %>
-
-            <% if f.year.to_i == y %>
-
-              <div class="media-card">
-
-                <% if f.photo.attached? %>
-                  <%= cl_image_tag f.photo.key%>
-                <% else %>
-                  <%= image_tag "logo_white.png" %>
-                <% end %>
-
-                <div class="media-card-description">
-                  <p class="title"><%= f.title %></p>
-
-                   <div class="action-links">
-                    <%= link_to edit_fiction_path(f) do  %>
-                      <i class="far fa-edit"></i>
-                    <% end %>
-                    <%= link_to fiction_path(f), method: :delete, data: { confirm: "Je vais détruire cette fiction. Es-tu sûr?" } do%>
-                      <i class="far fa-trash-alt"></i>
-                    <% end %>
-                  </div>
-
-                  <div class="triage" data-type="fictions" data-id="<%= f.id %>" data-ind="<%= f.ind %>">
-                    <i class="fas fa-chevron-left promote"></i>
-                    <i class="fas fa-chevron-right demote"></i>
-                  </div>
-
+                <div class="triage" data-type="fictions" data-id="<%= f.id %>" data-ind="<%= f.ind %>">
+                  <i class="fas fa-chevron-left promote"></i>
+                  <i class="fas fa-chevron-right demote"></i>
                 </div>
+
+
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
+        <% end %>
       </div>
+    </div>
 
-      <% @toggler = true %>
-    <% end %>
+    <% @toggler = false %>
 
+  <% else %>
+
+    <div class="year-container-edition">
+
+      <div class="year"><%= y %></div>
+
+      <div class="media-cards">
+
+        <% @fictions.each do |f| %>
+
+          <% if f.year.to_i == y %>
+
+            <div class="media-card">
+
+              <% if f.photo.attached? %>
+                <%= cl_image_tag f.photo.key%>
+              <% else %>
+                <%= image_tag "logo_white.png" %>
+              <% end %>
+
+              <div class="media-card-description">
+                <p class="title"><%= f.title %></p>
+
+                 <div class="action-links">
+                  <%= link_to edit_fiction_path(f) do  %>
+                    <i class="far fa-edit"></i>
+                  <% end %>
+                  <%= link_to fiction_path(f), method: :delete, data: { confirm: "Je vais détruire cette fiction. Es-tu sûr?" } do%>
+                    <i class="far fa-trash-alt"></i>
+                  <% end %>
+                </div>
+
+                <div class="triage" data-type="fictions" data-id="<%= f.id %>" data-ind="<%= f.ind %>">
+                  <i class="fas fa-chevron-left promote"></i>
+                  <i class="fas fa-chevron-right demote"></i>
+                </div>
+
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <% @toggler = true %>
   <% end %>
+
+<% end %>
 
 
