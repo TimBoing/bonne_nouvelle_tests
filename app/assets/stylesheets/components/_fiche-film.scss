@@ -143,6 +143,9 @@
 
         .description-card{
           // background-color: rgba(250, 250, 250, 0.2);
+          overflow-y: scroll;
+          max-height: 60vh;
+
           .title{
             font-size: 2em;
             color: red;
